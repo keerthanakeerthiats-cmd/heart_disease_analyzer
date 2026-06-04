@@ -114,6 +114,10 @@ The application uses Convolutional Neural Networks (CNN) for multi-class disease
 - **ML Framework**: TensorFlow 2.15
 - **Image Processing**: OpenCV, PIL
 
+## Author
+- Keerthana P T
+- ECE Student
+
 ## Note
 
 ⚠️ **Important**: This application is for educational and screening purposes only. The models are initialized with random weights. For production use, you need to train the models on actual medical datasets.
