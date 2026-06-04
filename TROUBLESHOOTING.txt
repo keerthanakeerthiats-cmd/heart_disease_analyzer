@@ -1,0 +1,288 @@
+================================================================
+         TROUBLESHOOTING GUIDE - Can't Open Website
+================================================================
+
+STEP 1: Run Diagnostic Tool
+============================
+Double-click: DIAGNOSE.bat
+
+This will automatically:
+✓ Check if Python is installed
+✓ Check if all files are present
+✓ Install missing dependencies
+✓ Identify the problem
+✓ Try to start the website
+
+Wait for it to complete and see what error it shows.
+
+
+================================================================
+COMMON PROBLEMS & SOLUTIONS
+================================================================
+
+PROBLEM 1: "Python is not recognized"
+======================================
+CAUSE: Python not installed or not in system PATH
+
+SOLUTION:
+1. Download Python from: https://www.python.org/downloads/
+2. Run installer
+3. ⚠️ IMPORTANT: Check "Add Python to PATH" box
+4. Click Install
+5. Restart computer
+6. Try again
+
+
+PROBLEM 2: Black window appears then closes immediately
+========================================================
+CAUSE: Error in app.py or missing dependencies
+
+SOLUTION:
+1. Double-click: DIAGNOSE.bat
+2. It will install missing packages automatically
+3. Try OPEN_WEBSITE.bat again
+
+
+PROBLEM 3: "ModuleNotFoundError: No module named 'flask'"
+==========================================================
+CAUSE: Flask not installed
+
+SOLUTION:
+Open Command Prompt and run:
+    pip install flask flask-cors pillow numpy opencv-python
+
+Or double-click: setup.bat
+
+
+PROBLEM 4: Browser opens but shows "This site can't be reached"
+================================================================
+CAUSE: Server didn't start properly
+
+SOLUTION:
+Check the black window for error messages.
+
+Common errors:
+
+  A) "ModuleNotFoundError"
+     Fix: pip install [missing module name]
+
+  B) "Port 5000 is already in use"
+     Fix: Close other applications using port 5000
+          Or change port in app.py (see below)
+
+  C) "Permission denied"
+     Fix: Run as Administrator
+          Right-click OPEN_WEBSITE.bat → Run as administrator
+
+
+PROBLEM 5: TensorFlow errors
+=============================
+CAUSE: TensorFlow not compatible with Python 3.13
+
+SOLUTION:
+The app works without TensorFlow initially!
+Models will give random predictions until trained.
+
+To fix properly:
+1. Install Python 3.11 (not 3.13)
+2. Run: pip install tensorflow
+
+
+PROBLEM 6: Website shows but can't upload images
+=================================================
+CAUSE: uploads/ folder missing or permission issues
+
+SOLUTION:
+1. Make sure uploads/ folder exists in project directory
+2. Check folder permissions (should allow read/write)
+
+
+================================================================
+HOW TO CHANGE PORT (If Port 5000 is Busy)
+================================================================
+
+If another app is using port 5000:
+
+1. Right-click app.py → Open with → Notepad
+2. Scroll to the very bottom
+3. Find this line:
+   app.run(debug=True, host='0.0.0.0', port=5000)
+
+4. Change 5000 to 5001:
+   app.run(debug=True, host='0.0.0.0', port=5001)
+
+5. Save file
+6. Now visit: http://localhost:5001
+
+
+================================================================
+MANUAL STEP-BY-STEP (If Scripts Don't Work)
+================================================================
+
+1. Open Command Prompt:
+   Press Windows + R
+   Type: cmd
+   Press Enter
+
+2. Navigate to project folder:
+   cd "C:\Users\VARUN COMPUTERS\Desktop\7th SEM\hhhhpppff"
+
+3. Install dependencies:
+   pip install flask flask-cors pillow numpy opencv-python
+
+4. Start application:
+   python app.py
+
+5. Open browser to:
+   http://localhost:5000
+
+
+================================================================
+CHECK SYSTEM REQUIREMENTS
+================================================================
+
+Minimum Requirements:
+✓ Python 3.8 or higher (3.11 recommended)
+✓ Windows 10 or higher
+✓ 4GB RAM minimum
+✓ Internet connection (for first-time setup)
+✓ Modern web browser (Chrome, Firefox, Edge)
+
+
+================================================================
+VERIFY PYTHON INSTALLATION
+================================================================
+
+Open Command Prompt and type:
+    python --version
+
+You should see: Python 3.x.x
+
+If you see "python is not recognized":
+→ Python not installed OR not in PATH
+→ Follow PROBLEM 1 solution above
+
+
+================================================================
+STILL NOT WORKING?
+================================================================
+
+Follow these steps IN ORDER:
+
+1. Double-click: DIAGNOSE.bat
+   → Read all error messages carefully
+
+2. Take a screenshot of errors shown
+
+3. Common fixes to try:
+   a) Restart computer
+   b) Run as Administrator
+   c) Disable antivirus temporarily
+   d) Check Windows Firewall settings
+
+4. If error says "No module named 'XXX'":
+   → Run: pip install XXX
+   (Replace XXX with the module name)
+
+5. If error says "Permission denied":
+   → Right-click OPEN_WEBSITE.bat
+   → Run as Administrator
+
+6. If nothing works:
+   → Check if Python installed correctly
+   → Reinstall Python with "Add to PATH" checked
+
+
+================================================================
+QUICK CHECKLIST
+================================================================
+
+Before asking for help, verify:
+
+□ Python is installed (python --version works)
+□ You're in the correct folder (hhhhpppff)
+□ app.py file exists
+□ templates/index.html exists
+□ Flask is installed (pip list | findstr flask)
+□ Port 5000 is not used by another app
+□ You ran DIAGNOSE.bat and read errors
+□ Antivirus is not blocking Python
+□ Windows Firewall allows Python
+
+
+================================================================
+ERROR MESSAGES DECODER
+================================================================
+
+Error: "ModuleNotFoundError"
+→ Missing Python package
+→ Fix: pip install [package name]
+
+Error: "Address already in use"
+→ Port 5000 busy
+→ Fix: Change port or close other apps
+
+Error: "Permission denied"
+→ Need administrator rights
+→ Fix: Run as administrator
+
+Error: "No such file or directory"
+→ Wrong folder location
+→ Fix: Navigate to correct folder
+
+Error: "Python is not recognized"
+→ Python not installed
+→ Fix: Install Python
+
+Error: "Syntax error"
+→ Code file corrupted
+→ Fix: Re-download files
+
+
+================================================================
+LAST RESORT - REINSTALL EVERYTHING
+================================================================
+
+If nothing works:
+
+1. Delete the entire hhhhpppff folder
+2. Download fresh files
+3. Install Python fresh (with "Add to PATH")
+4. Run AUTO_SETUP_ALL.bat
+5. Try again
+
+
+================================================================
+CONTACT INFO FOR HELP
+================================================================
+
+Include this information when asking for help:
+
+1. Python version (python --version)
+2. Windows version
+3. Exact error message (copy from black window)
+4. Screenshot of error
+5. What you were doing when error occurred
+
+
+================================================================
+SUCCESS INDICATORS
+================================================================
+
+You'll know it's working when you see:
+
+In black window:
+    * Running on http://127.0.0.1:5000
+    * Press CTRL+C to quit
+
+In browser:
+    Beautiful animated gradient background
+    "Heart Disease Analyzer" title
+    Two upload cards
+
+
+================================================================
+
+Run DIAGNOSE.bat first - it will find the problem!
+
+================================================================

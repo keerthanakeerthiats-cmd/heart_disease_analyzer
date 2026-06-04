@@ -1,0 +1,58 @@
+============================================================
+REAL AI MODEL TRAINING - Heart Disease Analyzer
+============================================================
+
+This script will train real AI models for better predictions.
+
+Estimated time: 1-3 hours (depending on dataset size)
+
+Press any key to continue...
+============================================================
+
+[STEP 1] Checking prerequisites...
+============================================================
+
+Checking Python and TensorFlow...
+
+Checking if dataset is organized...
+
+[STEP 2] Training ECG model...
+============================================================
+
+Training ECG Model (5 Disease Classes)
+Found 12450 images belonging to 5 classes.
+Found 3120 images belonging to 5 classes.
+
+Epoch 1/50
+2737/2737 [==============================] - 156s - accuracy: 0.7234
+Epoch 2/50
+2737/2737 [==============================] - 145s - accuracy: 0.8421
+...
+
+Model saved to: models/ecg_model.h5
+
+[STEP 3] Training MRI model...
+============================================================
+
+Training MRI Model (5 Disease Classes)
+Found 8760 images belonging to 5 classes.
+Found 2190 images belonging to 5 classes.
+
+Epoch 1/50
+1924/1924 [==============================] - 132s - accuracy: 0.6842
+...
+
+Model saved to: models/mri_model.h5
+
+[STEP 4] Starting website with real AI...
+============================================================
+
+Real AI models loaded successfully!
+Starting Heart Disease Analyzer...
+
+Access the website at:
+  http://localhost:5000
+  http://127.0.0.1:5000
+
+Press Ctrl+C to stop the server
+============================================================
